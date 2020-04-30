@@ -1,0 +1,164 @@
+body {
+    font-family: 'Raleway', sans-serif;
+}
+.main-body {
+    overflow: hidden;
+}
+.main-wrapper, .main-background {
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+#id-clear-day {
+    background: radial-gradient(circle at top right, rgba(242,248,247,1) 5%,rgb(255, 238, 201) 10%, rgb(197, 244, 250) 30%,rgb(129, 215, 255) 100%);
+    background: -webkit-radial-gradient(circle at top right, rgba(242,248,247,1) 5%,rgb(255, 238, 201) 10%, rgb(197, 244, 250) 30%,rgb(129, 215, 255) 100%);
+    background: -moz-radial-gradient(circle at top right, rgba(242,248,247,1) 5%,rgb(255, 238, 201) 10%, rgb(197, 244, 250) 30%,rgb(129, 215, 255) 100%);
+    background: -ms-radial-gradient(circle at top right, rgba(242,248,247,1) 5%,rgb(255, 238, 201) 10%, rgb(197, 244, 250) 30%,rgb(129, 215, 255) 100%);
+}
+#id-clear-night {
+    background: linear-gradient(rgb(11, 0, 75), rgb(50, 14, 255), rgb(87, 57, 255));
+    background: -webkit-linear-gradient(rgb(11, 0, 75), rgb(50, 14, 255), rgb(87, 57, 255));
+    background: -moz-linear-gradient(rgb(11, 0, 75), rgb(50, 14, 255), rgb(87, 57, 255));
+    background: -ms-linear-gradient(rgb(11, 0, 75), rgb(50, 14, 255), rgb(87, 57, 255));
+}
+#id-dark-day {
+    background: linear-gradient(rgb(90, 90, 92), rgb(99, 95, 116), rgb(148, 97, 49));
+    background: -webkit-linear-gradient(rgb(5, 0, 32), rgb(42, 37, 68), rgb(65, 61, 83));
+    background: -moz-linear-gradient(rgb(5, 0, 32), rgb(42, 37, 68), rgb(65, 61, 83));
+    background: -ms-linear-gradient(rgb(5, 0, 32), rgb(42, 37, 68), rgb(65, 61, 83));
+}
+#id-dark {
+    background: linear-gradient(rgb(5, 0, 32), rgb(42, 37, 68), rgb(65, 61, 83));
+    background: -webkit-linear-gradient(rgb(5, 0, 32), rgb(42, 37, 68), rgb(65, 61, 83));
+    background: -moz-linear-gradient(rgb(5, 0, 32), rgb(42, 37, 68), rgb(65, 61, 83));
+    background: -ms-linear-gradient(rgb(5, 0, 32), rgb(42, 37, 68), rgb(65, 61, 83));
+}
+
+.main-card {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 15px;
+    color: white;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+}
+
+.next-day-list {
+    height: 150px;
+    overflow-y: scroll;
+    font-size: 12px;
+}
+.next-day-list li {
+    padding: 3px;
+    opacity: 0.6;
+}
+
+.main-card h1, .next-day-list li {
+    text-transform: capitalize;
+}
+
+.rain {
+    background: linear-gradient(rgba(255, 255, 255, 0.6), rgb(56, 150, 165));
+    width:1px;
+    height:89px;
+    position: absolute;
+    animation: fall 3s linear infinite;    
+  }
+
+.snow {
+    background: white;
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+    position: absolute;
+    animation: fall 10s linear infinite;    
+}
+  
+  /* animate the drops*/
+  @keyframes fall {
+      to {margin-top:500px;}
+  }
+
+.loader-wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+.loader  {
+    animation: rotate 1s infinite;  
+    height: 50px;
+    width: 50px;
+  }
+  
+  .loader:before,
+  .loader:after {   
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 20px;  
+    width: 20px;
+  }
+  .loader:before {
+    animation: ball1 1s infinite;  
+    background-color: #cb2025;
+    box-shadow: 30px 0 0 #f8b334;
+    margin-bottom: 10px;
+  }
+  .loader:after {
+    animation: ball2 1s infinite; 
+    background-color: #00a096;
+    box-shadow: 30px 0 0 #97bf0d;
+  }
+  
+  @keyframes rotate {
+    0% { 
+      -webkit-transform: rotate(0deg) scale(0.8); 
+      -moz-transform: rotate(0deg) scale(0.8);
+    }
+    50% { 
+      -webkit-transform: rotate(360deg) scale(1.2); 
+      -moz-transform: rotate(360deg) scale(1.2);
+    }
+    100% { 
+      -webkit-transform: rotate(720deg) scale(0.8); 
+      -moz-transform: rotate(720deg) scale(0.8);
+    }
+  }
+  
+  @keyframes ball1 {
+    0% {
+      box-shadow: 30px 0 0 #f8b334;
+    }
+    50% {
+      box-shadow: 0 0 0 #f8b334;
+      margin-bottom: 0;
+      -webkit-transform: translate(15px,15px);
+      -moz-transform: translate(15px, 15px);
+    }
+    100% {
+      box-shadow: 30px 0 0 #f8b334;
+      margin-bottom: 10px;
+    }
+  }
+  
+  @keyframes ball2 {
+    0% {
+      box-shadow: 30px 0 0 #97bf0d;
+    }
+    50% {
+      box-shadow: 0 0 0 #97bf0d;
+      margin-top: -20px;
+      -webkit-transform: translate(15px,15px);
+      -moz-transform: translate(15px, 15px);
+    }
+    100% {
+      box-shadow: 30px 0 0 #97bf0d;
+      margin-top: 0;
+    }
+  }
